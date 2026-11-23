@@ -1,0 +1,23 @@
+# Créer une liste de nombre aléatoire
+import random 
+
+Liste = [] 
+for i in range (10):
+    randomnumber = random.randint (1,100)
+    Liste.append(randomnumber)
+print (Liste)
+print(min(Liste)) #Version simplifier du minimum
+
+# Chaque nombre regarde son prochain, si il est plus grand que son précédent, il le remplace
+while len(Liste) > 1 :
+        if Liste[0] < Liste[1]: 
+            Liste.remove(Liste[0])
+        else:
+        
+            Liste.remove(Liste[1])
+
+
+# Ecrit le chiffre le plus grand
+
+print (Liste)
+print (max(Liste)) #Version simplifier 
