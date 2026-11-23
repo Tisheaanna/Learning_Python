@@ -11,7 +11,7 @@ while User_Score <3 and Computer_Score <3: #While the score is under 3, game kee
     Computer_Choice = random.choice(Possible_Choice) #Choose
     print("-------Computer choose --------")
 
-    User_choice = input("Choose between rock, paper and scissors")
+    User_choice = input("Choose between rock, paper and scissors : ")
     print("You choose = ", User_choice)
 
     if User_choice == Computer_Choice:
