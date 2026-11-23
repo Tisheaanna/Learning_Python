@@ -1,41 +1,41 @@
 import random 
 
 #Scores starts at 0
-Score_joueur =  0
-score_ordi = 0
+User_Score =  0
+Computer_Score = 0
 
-while score_ordi <3 and score_ordi <3: #While the score is under 3, game keep running
+while User_Score <3 and Computer_Score <3: #While the score is under 3, game keep running
 
-    choix_possible = ["pierre","feuille", "ciseaux"] 
+    Possible_Choice = ["rock","paper", "scissors"] 
 
-    choix_ordi = random.choice(choix_possible) #Choose 'choix possible'
-    print("-------CHOIX ORDI--------")
+    Computer_Choice = random.choice(Possible_Choice) #Choose
+    print("-------Computer choose --------")
 
-    choix_utilisateur = input("Choisi entre pierre, feuille et ciseaux")
-    print("vous avez choisi = ", choix_utilisateur)
+    User_choice = input("Choose between rock, paper and scissors")
+    print("You choose = ", User_choice)
 
-    if choix_utilisateur == choix_ordi:
-        print("égalité!")
-    elif (choix_utilisateur == "pierre" and choix_ordi == "ciseaux") or \
-    (choix_utilisateur=="ciseaux" and choix_ordi== "feuille") or\
-    (choix_utilisateur=="feuille" and choix_ordi== "pierre"):
+    if User_choice == Computer_Choice:
+        print("equality!")
+    elif (User_choice == "rock" and Computer_Choice == "scissors") or \
+    (User_choice=="scissors" and Computer_Choice== "paper") or\
+    (User_choice=="paper" and Computer_Choice== "rock"):
      print("you win ! +1 pts")
-     Score_joueur = Score_joueur + 1
+     User_Score = User_Score + 1
      
 
    
 
     else :
-        print("l'ordi gagne la manche")
-        score_ordi = score_ordi + 1 
+        print("Computer wins")
+        Computer_Score = Computer_Score + 1 
 
     print ("-----------")
-    print (" Toi : ", Score_joueur, "ordi :" , score_ordi)
+    print (" You : ", User_Score, "Computer :" , Computer_Score)
     print("------------")
 
-if Score_joueur == 3 :
+if User_Score == 3 :
     print("_________________________")
-    print("BRAVO ! ")
+    print("GG ! ")
     print("__________________________")
 else :
     print("___________________________")
