@@ -1,0 +1,95 @@
+
+#Quels sont les variables ?
+import random
+Jauge_humeur = 10
+Humeur = ["neutral", "Happy", "Sad", "Verry Happy", "Verry Sad "]
+humeur_actuelle = "Happy"
+Actions_possible = ["pet" , "beat", "Bye", "play", "sleep", "feed", "!commands"]
+Actions = "nothing"
+
+#discussline random
+Bye_random = ("See you later !" , "Bye-Bye" , "I can't wait to see you again")
+
+#Début de l'interaction 
+Name = input ("Hello ! I'm your little friend ! Give me a name to start !")
+print (" I love this name ! I think", Name, "is perfect.")
+
+
+#tant que l'utilisateur de dit pas bye
+while Actions != "bye" : 
+
+    # Demander quoi faire 
+    Actions = input ("You can choose what to do : you can ask me my commands with '!commands' !")
+
+    #si l'action n'est pas 'bye' ni présente dans les actions-possible : dire "tu as choisis de me ...."
+    if Actions in Actions_possible !="bye":
+        print ("You choose to", Actions , "me !" )
+    
+
+    
+    elif Actions == "bye" :  # si l'action est bye : choisir un bye au asard dans la liste 
+        print (random.choice(Bye_random))
+        
+    else :  
+        print ("I'm sorry I don't understand", Actions, ". Can you say a word I know ? I can give you my commands if you say '!commands'") #sinon dire qu'il ne comprend pas la commande utilisé 
+
+
+
+
+    # Action si play 
+    if Actions == "play" :
+        print ("I love this ball !")
+        Jauge_humeur += 2
+        print(f"Happiness: {Jauge_humeur}")
+
+
+    #action si feed 
+    Choice_feeding = ["cupcake", "pizza", "pancakes", "burger"]
+    if Actions == "feed" :
+        Feed = input ("What do we eat ? cupcake pizza pancakes or burger")
+        print ("Oooh I love this", Feed )
+        Jauge_humeur += 3
+        print(f"Happiness: {Jauge_humeur}")
+
+
+    #action si sleep 
+    if Actions == "sleep" :
+            print ("You're right, it's time for me to sleep")
+            Jauge_humeur +=1
+            print(f"Happiness: {Jauge_humeur}")
+
+
+    # Actions si pet
+    if Actions == "pet" :
+        print ("Thank you ! ")
+        Jauge_humeur += 2
+        print(f"Happiness: {Jauge_humeur}")
+
+
+    # actions si beat 
+    if Actions == "beat" :
+        print ("Ouch, that's not nice ! ")
+        Jauge_humeur -= 2
+        print(f"Happiness: {Jauge_humeur}")
+
+    #!commands
+    if Actions == "!commands" :
+        print ("  ____________________________  ")
+        print (" |                            | ")
+        print (" |  play : to play with me    | ")
+        print (" |  pet : to pet me           | ")
+        print (" |  sleep : put me to bed     | ")
+        print (" |  feed : give me some food  | ") 
+        print (" |____________________________| ")
+
+    # Jauge humeur
+    if Jauge_humeur >= 15:
+        humeur_actuelle = "Very Happy"
+    elif Jauge_humeur >= 10:
+        humeur_actuelle = "Happy"
+    elif Jauge_humeur >= 5:
+        humeur_actuelle = "Sad"
+    else:
+        humeur_actuelle = "Very Sad"
+
+    print(f"{Name} is feeling {humeur_actuelle}")
